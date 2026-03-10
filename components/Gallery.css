@@ -1,0 +1,27 @@
+@keyframes scroll-right {
+  0% {
+    transform: translate(0)
+  }
+
+  to {
+    transform: translate(-25%)
+  }
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translate(-25%)
+  }
+
+  to {
+    transform: translate(0)
+  }
+}
+
+.animate-scroll-right {
+  animation: scroll-right 20s linear infinite alternate;
+}
+
+.animate-scroll-left {
+  animation: scroll-left 40s linear infinite alternate
+}
