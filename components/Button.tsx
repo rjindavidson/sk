@@ -12,7 +12,7 @@ const CTAButton = ({ destination = "", size, children }: CTAButtonProps) => {
     case 'small':
       return (
         <Link className="rounded-xl bg-linear-to-br from-blue-400 to-neutral-300 px-6 py-3 text-sm font-semibold
-     text-white transition-all duration-300 hover:scale-105"
+     text-white"
           href={destination}>
           {children}
         </Link>
