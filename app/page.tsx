@@ -1,18 +1,18 @@
 'use client'
 
+import Footer from "@/components/Footer";
 import Gallery from "@/components/Gallery";
 import Header from "@/components/Header";
 import HomeSection from "@/components/HomeSection";
-import PartnerSection from "@/components/PartnerSections";
 
 export default function Home() {
   return (
     <>
       <Header />
-      <main className="100vh">
+      <main>
         <HomeSection />
-        <PartnerSection />
         <Gallery />
+        <Footer />
       </main>
     </>
   );

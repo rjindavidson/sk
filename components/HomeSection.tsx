@@ -1,17 +1,13 @@
-import Image from "next/image";
 import CTAButton from "./Button";
+import PartnerSection from "./PartnerSections";
 
 const HomeSection = () => {
   return (
-    <section id="home-section" className="flex flex-col text-white items-center justify-center text-center pt-36 pb-24 bg-gray-900">
-      <div className="flex flex-col gap-[1.4rem] max-w-5xl">
+    <section id="home-section"
+      className="flex flex-col items-center justify-between text-center text-white pt-48
+      min-h-dvh bg-linear-to-b from-[#01161e] to-[#598392]">
+      <div className="flex flex-col gap-[1.4rem]">
         <h1 className="font-bold text-[3rem]">Quality Electroplating and Anodizing | Precision Metal Finishing</h1>
-        <div className="flex w-full h-128">
-          <div className="relative w-full h-auto rounded-2xl overflow-hidden">
-            <Image src="/landing-page-plating-image.png" alt="Company Photo"
-              fill={true} className="w-full h-auto object-cover" />
-          </div>
-        </div>
         <p className="text-[1.2rem] leading-8">
           Since 1967, S&K Plating has provided high quality precision metal finishing
           services to commercial and military specifications.
@@ -21,6 +17,7 @@ const HomeSection = () => {
           <CTAButton size="large">Contact Us</CTAButton>
         </div>
       </div>
+      <PartnerSection />
     </section>
   )
 }
