@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <section id="" className="flex flex-col items-center justify-between text-center text-white h-screen">
+    <section id="contact" className="flex flex-col items-center justify-between text-center text-white h-screen">
       <div className="flex items-center justify-center h-[50vh] bg-[#124559] w-full">
         <div className="flex flex-col">
           <h2 className="font-bold text-[3rem]">Get in contact with us!</h2>

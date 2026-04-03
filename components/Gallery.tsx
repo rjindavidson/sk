@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 const Gallery = () => {
   return (
-    <section className="flex flex-col items-center justify-center bg-white py-12 h-screen">
+    <section id="gallery" className="flex flex-col items-center justify-center bg-white py-12 h-screen">
       <div className="max-w-5xl text-center">
         <h2 className="font-bold text-[2.5rem]">What we do:</h2>
         <p className="text-[1.2rem] leading-8 p-8">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum amet distinctio cumque quod aperiam maxime temporibus ab quisquam nisi enim nemo consequatur accusamus expedita, eaque corrupti nam pariatur porro quibusdam!</p>
