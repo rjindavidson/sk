@@ -14,7 +14,7 @@ const HomeSection = () => {
           Our mission is to satisfy our customer requests with quality and competitive pricing.
         </p>
         <div className="flex items-center justify-center mt-4">
-          <CTAButton size="large">Contact Us</CTAButton>
+          <CTAButton size="large" destination="#contact">Contact Us</CTAButton>
         </div>
       </div>
       <PartnerSection />
