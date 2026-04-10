@@ -1,12 +1,34 @@
 'use client'
 import Image from "next/image";
-import Dropdown from "./Dropdown";
 import { useState } from "react";
 
 type ContactComponentProps = {
   title: string
   description: string
 }
+type DropdownProps = {
+  answer: string
+  question: string
+  thisKey: string
+}
+
+const FAQs = [
+  {
+    key: "faq1",
+    question: "Services Provided",
+    answer: "Cosmetic metal finishing: nickel chrome plating and other finishes provide a shimmering quality that ensures durability and appearance"
+  },
+  {
+    key: "faq2",
+    question: "faq here",
+    answer: "blah blah blah blah blah blah blah blah blah blah"
+  },
+  {
+    key: "faq3",
+    question: "faq here",
+    answer: "blah blah blah blah blah blah blah blah blah"
+  }
+]
 
 const ContactComponent = ({ title, description }: ContactComponentProps) => {
   return (
@@ -22,20 +44,46 @@ const ContactComponent = ({ title, description }: ContactComponentProps) => {
 }
 
 const Footer = () => {
-  const [open1, setOpen1] = useState(false)
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
+
+  const Dropdown = ({ answer, question, thisKey }: DropdownProps) => {
+    return (
+      <div className="overflow-hidden rounded-[1.2rem] border border-white/10 transition-all 
+      duration-300 backdrop-blur-md hover:border-white/20">
+        <button
+          className="flex justify-between items-center w-full cursor-pointer md:p-[1.2rem]"
+          onClick={() => {
+            return activeDropdown === thisKey ? setActiveDropdown(null) : setActiveDropdown(thisKey)
+            // if (activeDropdown === thisKey) {
+            //   setActiveDropdown(null)
+            // } else {
+            //   setActiveDropdown(thisKey)
+            // }
+          }}
+        >
+          <span className="text-white text-[1rem] font-semibold leading-[1.4] flex-1 md:text-[1.5rem]">{question}</span>
+          <div className="flex items-center justify-center w-[2.8rem] h-[2.8rem] text-[2rem] font-light rounded-[0.8rem] shrink-0">+</div>
+        </button>
+        <div className={activeDropdown === thisKey ? "h-auto p-4" : "h-0"}>
+          {answer}
+        </div>
+      </div>
+    )
+  }
 
   return (
     <section id="contact" className="flex flex-col items-center justify-center text-center text-white min-h-dvh">
       <div className="flex flex-1 items-center justify-around bg-[#124559] w-full">
-        <div className="flex flex-col max-w-2xl">
+        <div className="flex flex-col gap-2 max-w-2xl">
           <h3 className="font-bold text-[1.5rem] md:text-[3rem]">
             FAQs
           </h3>
           <div className="flex flex-col gap-[1.6rem]">
-            <Dropdown question="Services provided" answer="lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem" />
-            <Dropdown question="Services provided" answer="lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem" />
-            <Dropdown question="Services provided" answer="lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem" />
-
+            {FAQs.map(faq => (
+              <Dropdown
+                key={faq.key} question={faq.question} answer={faq.answer} thisKey={faq.key}
+              />
+            ))}
           </div>
         </div>
         <div className="h-auto rounded-2xl overflow-hidden m-4 hidden lg:block">
