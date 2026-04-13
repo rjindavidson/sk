@@ -54,11 +54,6 @@ const Footer = () => {
           className="flex justify-between items-center w-full cursor-pointer md:p-[1.2rem]"
           onClick={() => {
             return activeDropdown === thisKey ? setActiveDropdown(null) : setActiveDropdown(thisKey)
-            // if (activeDropdown === thisKey) {
-            //   setActiveDropdown(null)
-            // } else {
-            //   setActiveDropdown(thisKey)
-            // }
           }}
         >
           <span className="text-white text-[1rem] font-semibold leading-[1.4] flex-1 md:text-[1.5rem]">{question}</span>
@@ -78,7 +73,7 @@ const Footer = () => {
           <h3 className="font-bold text-[1.5rem] md:text-[3rem]">
             FAQs
           </h3>
-          <div className="flex flex-col gap-[1.6rem]">
+          <div className="flex flex-col gap-[1.6rem] m-4">
             {FAQs.map(faq => (
               <Dropdown
                 key={faq.key} question={faq.question} answer={faq.answer} thisKey={faq.key}

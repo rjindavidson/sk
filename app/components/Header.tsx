@@ -4,7 +4,7 @@ import { scrollToId } from "../utils";
 
 const Header = () => {
   return (
-    <header className="sticky top-0 left-0 right-0 w-full h-18 z-50 shadow-xl/20 bg-white">
+    <header className="sticky top-0 left-0 right-0 w-full h-14 z-50 shadow-xl/20 bg-white md:h-18">
       <div className="flex px-4 md:px-6 items-center justify-between h-full max-h-full">
         <div className="h-12">
           <button onClick={() => scrollToId('home')}>
